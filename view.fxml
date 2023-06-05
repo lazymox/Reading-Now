@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demoreadingnow.Controller">
+    <tabs>
+        <Tab fx:id="readingnow" text="READING NOW                            ">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="530.0" prefWidth="931.0" style="-fx-background-color: #2f3233;">
+                    <children>
+                        <TextArea fx:id="notesRN" layoutX="703.0" layoutY="112.0" prefHeight="485.0" prefWidth="239.0" wrapText="true" />
+                        <Group layoutX="579.0" layoutY="64.0" />
+                        <Label layoutX="704.0" layoutY="78.0" prefHeight="25.0" prefWidth="159.0" text=" Notes:" textFill="WHITE">
+                            <font>
+                                <Font name="Arial Bold Italic" size="21.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="8.0" layoutY="1.0" prefHeight="50.0" prefWidth="249.0" text="Reading Now" textFill="WHITE">
+                            <font>
+                                <Font name="Georgia" size="34.0" />
+                            </font>
+                        </Label>
+                  <ScrollPane layoutX="18.0" layoutY="73.0" prefHeight="520.0" prefWidth="680.0">
+                     <content>
+                        <VBox fx:id="bookLayout" alignment="CENTER" prefHeight="520.0" prefWidth="660.0" spacing="20.0" style="-fx-background-color: #2f3233; -fx-border-color: #2f3233;" />
+                     </content>
+                  </ScrollPane>
+                  <Button layoutX="897.0" layoutY="78.0" mnemonicParsing="false" onAction="#savenoteBUTTON" text="Save" />
+                    </children></AnchorPane>
+            </content>
+        </Tab>
+        <Tab fx:id="read" text="READ                                               ">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="530.0" prefWidth="931.0" style="-fx-background-color: #2f3233;">
+                    <children>
+                        <Group layoutX="579.0" layoutY="64.0" />
+                        <Label layoutX="8.0" layoutY="1.0" prefHeight="50.0" prefWidth="249.0" text="Read" textFill="WHITE">
+                            <font>
+                                <Font name="Georgia" size="34.0" />
+                            </font>
+                        </Label>
+                        <TableView fx:id="tableR" layoutX="5.0" layoutY="51.0" prefHeight="547.0" prefWidth="949.0">
+                     <columns>
+                        <TableColumn fx:id="read_name" prefWidth="401.20676469802856" text="Name" />
+                        <TableColumn fx:id="read_author" prefWidth="453.7931671142578" text="Author" />
+                        <TableColumn fx:id="read_like" prefWidth="91.71383666992188" text="out of 10" />
+                     </columns></TableView>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab fx:id="willread" text="WILL READ                                       ">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="530.0" prefWidth="931.0" style="-fx-background-color: #2f3233;">
+                    <children>
+                        <Group layoutX="579.0" layoutY="64.0" />
+                        <Label layoutX="8.0" layoutY="1.0" prefHeight="50.0" prefWidth="249.0" text="Will read" textFill="WHITE">
+                            <font>
+                                <Font name="Georgia" size="34.0" />
+                            </font>
+                        </Label>
+                  <ScrollPane layoutX="15.0" layoutY="60.0" prefHeight="540.0" prefWidth="930.0">
+                     <content>
+                        <GridPane fx:id="bookContainer" prefHeight="5.0" prefWidth="3.0">
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                        </GridPane>
+                     </content>
+                  </ScrollPane>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab fx:id="catalog" text="CATALOG                                 ">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="530.0" prefWidth="931.0" style="-fx-background-color: #2f3233;">
+                    <children>
+                        <Group layoutX="579.0" layoutY="64.0" />
+                        <TextField fx:id="search" layoutX="234.0" layoutY="9.0" prefHeight="32.0" prefWidth="450.0" promptText="Search" />
+                        <Label layoutX="8.0" layoutY="1.0" prefHeight="50.0" prefWidth="249.0" text="Catalog" textFill="WHITE">
+                            <font>
+                                <Font name="Georgia" size="34.0" />
+                            </font>
+                        </Label>
+                        <TableView fx:id="tableC" layoutX="5.0" layoutY="51.0" onMouseClicked="#getSelected" prefHeight="547.0" prefWidth="949.0">
+                     <columns>
+                        <TableColumn fx:id="catalog_name" prefWidth="334.96364641189575" text="Name" />
+                        <TableColumn fx:id="catalog_author" prefWidth="293.5362854003906" text="Authors" />
+                        <TableColumn fx:id="catalog_categories" prefWidth="289.04730224609375" text="Category" />
+                     </columns></TableView>
+                        <Button fx:id="chooseC" layoutX="890.0" layoutY="13.0" mnemonicParsing="false" onAction="#chooseButton" text="Choose">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+    </tabs>
+</TabPane>

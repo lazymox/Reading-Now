@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox fx:id="card" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="600.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demoreadingnow.CardController">
+   <children>
+      <ImageView fx:id="card_image" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+      <VBox alignment="CENTER_LEFT" prefHeight="260.0" prefWidth="283.0" spacing="5.0">
+         <children>
+            <Label fx:id="card_name" prefHeight="136.0" prefWidth="488.0" text="Label" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Georgia" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="card_author" prefHeight="44.0" prefWidth="487.0" text="Label" textFill="WHITE">
+               <font>
+                  <Font name="Georgia" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="card_rating" prefHeight="44.0" prefWidth="487.0" text="Label" textFill="WHITE">
+               <font>
+                  <Font name="Georgia" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+         <children>
+            <TextField fx:id="newRating" promptText="rate out of 10" style="-fx-background-color: grey;" />
+            <Button mnemonicParsing="false" onAction="#doneBUTTON" prefHeight="30.0" prefWidth="64.0" style="-fx-background-color: black;" text="end" textFill="WHITE">
+               <font>
+                  <Font name="Andale Mono" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</HBox>
